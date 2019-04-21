@@ -1,0 +1,55 @@
+{
+  "processes": [
+    {
+      "name": "postgresql-example",
+      "dependencies": [
+        "docker"
+      ]
+    },
+    {
+      "name": "influxdb-example",
+      "dependencies": [
+        "docker"
+      ]
+    },
+    {
+      "name": "process1",
+      "dependencies": [
+        "postgresql-example",
+        "influxdb-example"
+      ]
+    },
+    {
+      "name": "process2",
+      "dependencies": [
+        "postgresql"
+      ]
+    },
+    {
+      "name": "process3",
+      "dependencies": [
+        "process1"
+      ]
+    },
+    {
+      "name": "process4",
+      "dependencies": [
+        "process3"
+      ]
+    },
+    {
+      "name": "process5",
+      "dependencies": [
+        "process4"
+      ]
+    },
+    {
+      "name": "process6",
+      "dependencies": [
+        "process5",
+        "postgresql-example",
+        "influxdb-example"
+      ]
+    }
+  ]
+}
